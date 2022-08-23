@@ -1,0 +1,134 @@
+<?php
+$insert = false;
+if(isset($_POST['name'])){
+    // Set connection variables
+    $server = "localhost";
+    $username = "root";
+    $password = "";
+
+    // Create a database connection
+    $con = mysqli_connect($server, $username, $password);
+
+    // Check for connection success
+    if(!$con){
+        die("connection to this database failed due to" . mysqli_connect_error());
+    }
+    // echo "Success connecting to the db";
+
+    // Collect post variables
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $pass = $_POST['pass'];
+    $sql = "INSERT INTO `vikas2`.`joinbb` (`name`, `email`, `phone`, `pass_word`, `date`) VALUES ('$name', '$email', '$phone', '$pass', current_timestamp());";
+    // echo $sql;
+
+    // Execute the query
+    if($con->query($sql) == true){
+        // echo "Successfully inserted";
+
+        // Flag for successful insertion
+        $insert = true;
+    }
+    else{
+        echo "ERROR: $sql <br> $con->error";
+    }
+
+    // Close the database connection
+    $con->close();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <link href="join.css" rel="stylesheet">
+    <title>VIKAS-join</title>
+</head>
+
+<body class="full-height-grow">
+    <div class="container full-height-grow">
+        <header class="main-header">
+          <div class="dropdown">
+            <button class="dropbtn">New Arrivals</button>
+              <div class="dropdown-content">
+                <a href="#">Women</a> 
+                <a href="#">Men</a>   
+                <a href="#">Kids</a>  
+                <a href="#">Indian Spring</a>
+                <a href="#">Indigo Collection</a>
+                <a href="#">Seasonal Store</a>
+                <a href="#">Festive</a>
+                <a href="#">Wedding</a>
+              </div>
+        </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Go to top</a></li>
+                    <li><a href="Discover.html">Discover</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="join-main-section">
+            <h1 class="join-text">Join the
+                <span class="accent-text">Project</span>
+            </h1>
+            <form class="join-form" action="joinb.php" method="post">
+              <div class="input-group">
+                <label>Name:</label>
+                <input type="text" name="name"  id="name">
+            </div>
+            <div class="input-group">
+                <label>Email id:</label>
+                <input type="email" name="email" id="email">
+            </div>
+
+            <div class="input-group">
+                <label>Phone No.:</label>
+                <input type="text" name="phone" id="phone">
+            </div>
+
+            <div class="input-group">
+                <label>Password:</label>
+                <input type="password" name="pass" id="pass">
+            </div>
+            <div class="input-group">
+                <button href="login.html" type="submit" class="btnn">Join Now</button>
+            </div>
+            </form>
+        </section>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+          <nav class="footer-nav">
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+          <nav class="footer-nav">
+            <ul>
+              <li>
+                <a href="#" class="social-link">
+                  <img src="twitter.svg">
+                  Twitter
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link">
+                  <img src="facebook (1).svg">
+                  Facebook
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+      <!--INSERT INTO `joinb` (`name`, `email`, `phone`, `pass_word`, `date`) VALUES ('nicole', 'nicole@12gmail.com', '77777765212', 'aaaasadsa1', '2022-08-22');-->
+    </body>
+    </html>

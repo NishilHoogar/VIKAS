@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+<meta charset="UTF-8">
+<style>
+body
+{
+  background-image: url("loginb.jpg");
+}
+
+button
+{
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  opacity: 0.9;
+}
+input[type=text], input[type=password] {
+  width: 60%;
+  padding: 20px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border:black;
+  background: whitesmoke;
+  text-align: center;
+}
+.box
+{
+  width: 20%;
+  border: 10px solid #2E9CCA;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 110px;
+  color: white;
+}
+
+</style>
+<title>
+</title>
+</head>
+
+<body >
+	
+<form action="login.php" method="post">
+	<center>
+    <div class="box">
+      <h2 >OTP VARIFICATION</h2>
+<label for="username">PHONE NO</label>
+<br>
+<input type="text" id="num" name="num" placeholder="PHONE NUMBER" class="form-control" required>
+<br>
+<button type="submit" id="btn" name="btn" class="btn btn-primary">SEND OTP</button>
+</div>
+</center>
+</form>
+<p class=" text-center text-danger"><?php echo $err; ?></p>
+<p class=" text-center text-success"><?php echo $ses; ?></p>
+
+	</body>
+  </html>
