@@ -1,0 +1,44 @@
+body{
+    margin:0;
+    font-family: "poppins", sans-serif;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #EDE7DC;
+    height:100vh;
+    color: #262626;
+}
+
+.otp-field{
+    display: flex;
+}
+
+.otp-field input{
+    width: 54px;
+    font-size: 62px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 2px;
+    border: 2px solid #262626;
+    background: #646464;
+    font-weight: bold;
+    color: #EDE7DC;
+    outline: none;
+    transition: all 0.1s;
+}
+
+.otp-field input:focus{
+    border: 2px solid #262626;
+    box-shadow: 0 0 2px 2px #000000c5;
+}
+
+.disabled{
+    opacity: 0.5;
+}
+
+.space{
+    margin-right : Irem ! important;
+}

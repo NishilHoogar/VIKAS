@@ -1,0 +1,36 @@
+.home-main-section{
+    display:flex;
+    justify-content: stretch;
+    align-items: space-between;
+    flex-grow: 1;
+}
+
+.home-main-section .img-wrapper{
+    flex-grow: 1;
+    flex-direction: column;
+    display: flex;
+    align-items: stretch ;
+    justify-content: flex-end;
+}
+
+.home-main-section .call-to-action {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem;
+    align-self: center;
+}
+
+.ali{
+    margin-left: 60px;
+}
+
+@media (max-width: 900px) {
+    .home-main-section .img-wrapper {
+        display: none;
+        }
+    }   
+
+.home-main-section {
+    justify-content: center;
+}
