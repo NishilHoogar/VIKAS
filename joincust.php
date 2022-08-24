@@ -72,6 +72,14 @@ input[type=text], input[type=password] {
   color: black;
 }
 
+  df-messenger {
+            --df-messenger-bot-message: #878fac;
+            --df-messenger-button-titlebar-color: #df9b56;
+            --df-messenger-chat-background-color: #fafafa;
+            --df-messenger-font-color: white;
+            --df-messenger-send-icon: #878fac;
+            --df-messenger-user-message: #99b234;
+        }
 </style>
 <title>
 </title>
@@ -93,7 +101,16 @@ input[type=text], input[type=password] {
 </div>
 </center>
 </form>
-
+  
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-icon="bot.png" 
+  chat-background-color="white"
+  chat-title="chatbot"
+  agent-id="a2754a0c-4018-43ef-984d-78169ab8ce80"
+  language-code="en"
+></df-messenger>
 
 
     </body>
